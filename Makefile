@@ -1,6 +1,6 @@
 install-tools:
 	sudo apt-get update
-	sudo apt install openssl eog unzip
+	sudo apt install openssl eog unzip make
 
 setup: 
 	cd materials; unzip Labsetup.zip; cp Labsetup/* ../Labsetup -rf; rm Labsetup -rf
@@ -32,7 +32,7 @@ task6:
 task7: 
 	cd Labsetup; bash task7.sh >> task7_out.txt
 
-build: install-tools reset task1 task2 task3 task4 task5 task6 task7
+build: reset task1 task2 task3 task4 task5 task6 task7
 
 now: 
 	cd Labsetup; bash solution.sh
