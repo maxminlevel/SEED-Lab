@@ -9,11 +9,11 @@ head -c 54 pic_original.bmp > header
 # ECB
 openssl enc -aes-128-ecb -e -in pic_original.bmp -out ecb.bmp -K $K -iv $iv
 tail -c +55 ecb.bmp > body_ecb
-cat header body > new_ecb.bmp
+cat header body_ecb > new_ecb.bmp
 eog -n new_ecb.bmp &
 
 # CBC
 openssl enc -aes-128-cbc -e -in pic_original.bmp -out cbc.bmp -K $K -iv $iv
-tail -c +55 cbc.bmp > body
-cat header body > new_cbc.bmp
+tail -c +55 cbc.bmp > body_cbc
+cat header body_cbc > new_cbc.bmp
 eog -n new_cbc.bmp &

@@ -13,4 +13,8 @@ for type in ${tCiphers[@]}; do
     echo $type
     openssl enc $type -e -in plaintext.txt -out cipher${type}.bin -K $K -iv $iv
     openssl enc $type -d -in cipher${type}.bin -out plain${type}.txt -K $K -iv $iv
+    if test $(diff plaintext.txt plain${type}.txt | wc -m) -gt 0 
+    then
+        echo "Have different at $type"
+    fi
 done

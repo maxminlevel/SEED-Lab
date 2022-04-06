@@ -10,3 +10,6 @@ Labsetup/Files/*
 !Labsetup/Files/freq.py
 !Labsetup/Files/pic_original.bmp
 !Labsetup/Files/sample_code.py
+Labsetup/*.txt
+
+*mml*
