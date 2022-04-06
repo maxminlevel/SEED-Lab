@@ -4,3 +4,9 @@ materials/Labsetup/*
 
 *.out
 *.s
+Labsetup/Files/*
+!Labsetup/Files/ciphertext.txt
+!Labsetup/Files/word.txt
+!Labsetup/Files/freq.py
+!Labsetup/Files/pic_original.bmp
+!Labsetup/Files/sample_code.py
