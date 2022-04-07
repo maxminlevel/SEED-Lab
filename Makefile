@@ -12,25 +12,29 @@ reset: hard-clean
 	make setup
 
 task1: 
-	cd Labsetup; bash task1.sh >> task1_out.txt
+	cd Labsetup; bash task1.sh
 
 task2: 
-	cd Labsetup; bash task2.sh >> task2_out.txt
+	cd Labsetup; bash task2.sh
 
 task3: 
-	cd Labsetup; bash task3.sh >> task3_out.txt
+	cd Labsetup; bash task3.sh
 
 task4: 
-	cd Labsetup; bash task4.sh >> task4_out.txt
+	cd Labsetup; bash task4.sh
 
 task5: 
-	cd Labsetup; bash task5.sh >> task5_out.txt
+	cd Labsetup; bash task5.sh
 
-task6: 
-	cd Labsetup; bash task6.sh >> task6_out.txt
+task61: 
+	cd Labsetup; bash task61.sh
+task62: 
+	cd Labsetup; bash task62.sh
+task63: 
+	cd Labsetup; bash task63.sh
 
 task7: 
-	cd Labsetup; bash task7.sh >> task7_out.txt
+	cd Labsetup; bash task7.sh
 
 build: reset task1 task2 task3 task4 task5 task6 task7
 

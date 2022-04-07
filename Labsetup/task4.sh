@@ -1,6 +1,7 @@
 #!/bin/bash
 set e
 cd Files
+rm Task4 -rf
 mkdir Task4
 cd Task4
 
