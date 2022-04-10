@@ -10,7 +10,7 @@ data = bytearray(first, encoding='utf-8')
 ciphertext = bytearray.fromhex(second)
 iv = bytearray.fromhex(third)
 
-with open('./words.txt') as f:
+with open('./Files/words.txt') as f:
     keys = f.readlines()
 
 for k in keys:
