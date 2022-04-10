@@ -1,5 +1,5 @@
 #!/bin/bash
-set e
+set -e
 bash task1.sh >> /dev/null
 cd Files
 rm Task61 -rf
