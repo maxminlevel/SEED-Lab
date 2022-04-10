@@ -10,7 +10,7 @@ file="f1000b"
 K=00112233445566778889aabbccddeeff
 iv=0102030405060708
 offset=0x55
-declare -a tCiphers=("-aes-128-cbc") # "-bf-cbc" "-aes-128-cfb" "-aes-128-ctr")
+declare -a tCiphers=("-aes-128-cbc" "-bf-cbc" "-aes-128-cfb" "-aes-128-ctr")
 declare -a tCorr=("edit")
 
 for type in ${tCiphers[@]}; do

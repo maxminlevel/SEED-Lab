@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from sys import argv
+import binascii
 
 _, first, second, third = argv
 p1 = bytearray(first, encoding='utf-8')
@@ -8,4 +9,4 @@ p1.extend([padding]*padding)
 IV = bytearray.fromhex(second)
 IV_NEXT = bytearray.fromhex(third)
 p2 = bytearray(x ^ y ^ z for x, y, z in zip(p1, IV, IV_NEXT))
-print(p2.decode('utf-8'), end='')
+print(binascii.hexlify(p2))
