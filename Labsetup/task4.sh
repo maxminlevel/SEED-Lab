@@ -13,7 +13,7 @@ K=00112233445566778889aabbccddeeff
 iv=0102030405060708
 
 declare -a files=("f5b" "f10b" "f16b")
-declare -a tCiphers=("-aes-128-cbc" "-aes-128-ecb" "-aes-128-cfb" "-aes-128-ctr")
+declare -a tCiphers=("-aes-128-cbc" "-aes-128-ecb" "-aes-128-cfb" "-aes-128-ofb")
 for type in ${tCiphers[@]}; do
     echo ${type}
     for file in ${files[@]}; do
