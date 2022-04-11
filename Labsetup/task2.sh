@@ -2,6 +2,7 @@
 set -e
 bash task1.sh >> /dev/null
 cd Files
+rm Task2 -rf
 mkdir Task2
 cp plaintext.txt Task2/plaintext.txt
 cd Task2
@@ -12,7 +13,7 @@ n=$(openssl list -cipher-algorithms | wc -l)
 echo -e "Number ciphertype openssl enc support: $n"
 echo -e "Type command 'openssl list -cipher-algorithms' to know\n"
 
-declare -a tCiphers=("-aes-128-cbc" "-bf-cbc" "-aes-128-cfb" "-aes-128-ctr")
+declare -a tCiphers=("-aes-128-cbc" "-aes-128-cfb" "-aes-128-ofb" "-aes-128-ctr" "-aes-128-ecb")
 for type in ${tCiphers[@]}; do
     echo $type
     openssl enc $type -e -in plaintext.txt -out cipher${type}.bin -K $K -iv $iv
