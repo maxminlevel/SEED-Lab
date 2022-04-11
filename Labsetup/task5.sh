@@ -9,8 +9,8 @@ file="f1000b"
 
 K=00112233445566778889aabbccddeeff
 iv=0102030405060708
-offset=0x55
-declare -a tCiphers=("-aes-128-cbc" "-bf-cbc" "-aes-128-cfb" "-aes-128-ofb")
+offset=0x37
+declare -a tCiphers=("-aes-128-ecb" "-aes-128-cbc" "-aes-128-cfb" "-aes-128-ofb")
 declare -a tCorr=("edit")
 
 for type in ${tCiphers[@]}; do
@@ -19,7 +19,7 @@ for type in ${tCiphers[@]}; do
     for typeCorr in ${tCorr[@]}; do
         echo ${typeCorr}
         cp "cipher${type}-${file}.bin" "cipher${type}-${file}-${typeCorr}.bin"
-        printf '\x2B' | dd of="cipher${type}-${file}-${typeCorr}.bin" conv=notrunc bs=1 seek=$(($offset))
+        printf '\x00' | dd of="cipher${type}-${file}-${typeCorr}.bin" conv=notrunc bs=1 seek=$(($offset))
         openssl enc $type -d -in "cipher${type}-${file}-${typeCorr}.bin" -out "plain${type}-${file}-${typeCorr}.txt" -K $K -iv $iv
         if test $(diff "$file.txt" "plain${type}-${file}-${typeCorr}.txt" | wc -m) -gt 0 
         then
