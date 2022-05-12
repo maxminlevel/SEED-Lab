@@ -26,11 +26,17 @@ task4:
 task5: 
 	@cd Labsetup; bash task5.sh
 
-task6:
-	@cd Labsetup; bash task6.sh
+task61:
+	@cd Labsetup; bash task61.sh
+
+task62:
+	@cd Labsetup; bash task62.sh
+
+task63:
+	@cd Labsetup; bash task63.sh
 
 task7: 
 	@cd Labsetup; bash task7.sh
 
-build: reset task1 task2 task3 task4 task5 task6 task7
+build: reset task1 task2 task3 task4 task5 task61 task62 task63 task7
 	@echo "Complete"

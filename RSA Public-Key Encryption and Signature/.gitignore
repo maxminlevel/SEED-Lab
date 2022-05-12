@@ -6,3 +6,5 @@ materials/Labsetup/*
 *.s
 
 *mml*
+
+**/task*.txt
